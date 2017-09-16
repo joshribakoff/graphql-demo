@@ -1,8 +1,8 @@
 const fetch = require('node-fetch')
 const cheerio = require('cheerio')
 
-let BryantsWebsite = 'http://cognitivebiasoftheday.com' // why is ssl expired Bryant!? Why? :p
-let endpoint = (uri) => `${BryantsWebsite}${uri}`       // create a little helper to generate endpoints
+const BryantsWebsite = 'http://cognitivebiasoftheday.com' // why is ssl expired Bryant!? Why? :p
+const endpoint = (uri) => `${BryantsWebsite}${uri}`       // create a little helper to generate endpoints
 
 let listCache;
 function list() {
@@ -15,12 +15,12 @@ function list() {
   return fetch(endpoint('/list'))           // fetch the list page
     .then((res) => res.text() )             // get the body
     .then((text) => {
-      let $ = cheerio.load(text)            // load the body into cheerio
-      let links = $('a')                    // Get all the links on this page
-      let biases = []                       // Initialize an array of plain ole javascript objects (POJOs)
+      const $ = cheerio.load(text)            // load the body into cheerio
+      const links = $('a')                    // Get all the links on this page
+      const biases = []                       // Initialize an array of plain ole javascript objects (POJOs)
 
       $(links).each((i, elem) => {          // Iterate the links & hydrate the biases array with POJOs
-        let link = $(elem)                  // Get a cherio reference to the link element
+        const link = $(elem)                  // Get a cherio reference to the link element
         biases.push({
           title: link.text(),
           url: link.attr('href')
