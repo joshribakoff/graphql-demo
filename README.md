@@ -43,10 +43,10 @@ https://github.com/facebook/graphql/issues/237
 - Rich views that are used in different contexts
 - Network resources are limited or unreliable
 
-# Mental Model of GraphQL
+# A picture is worth 1000 words
 
-![](https://imgur.com/e39c532d-48bc-48f6-af5e-e3dc426ae148)
-![](blob:https://imgur.com/3533fe75-4569-48e9-8edf-5fcd2fc95b04)
-![](https://i.imgur.com/undefined.png)
+![](https://i.imgur.com/l8cAHSN.png)
+![](blob:https://imgur.com/8175d28f-b2ec-4d16-aceb-0848493bccc7)
+![](https://i.imgur.com/BZG9Rkh.png)
 
 https://www.youtube.com/watch?v=Tpf9kVE2AY8
