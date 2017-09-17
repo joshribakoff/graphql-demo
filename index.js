@@ -19,26 +19,17 @@ const typeDefs = `
 
 const resolvers = {
   Query: {
-    random: function() {
-      return list()
-        .then((theList) => {
-          let bias = _.sample(theList);
-          return bias;
-        })
+    random: () => {
+      return list().then((theList) => _.sample(theList))
     },
     list: () => {
-      return list()
-        .then((theList) => {
-          return theList.map((bias) => {
-            return bias;
-          })
-        })
+      return list().then((theList) => {
+        return theList.map((bias) => bias)
+      })
     },
   },
   Bias: {
-    description: (bias) => {
-      return description(bias.url)
-    }
+    description: (bias) => description(bias.url)
   }
 }
 
