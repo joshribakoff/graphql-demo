@@ -23,9 +23,7 @@ const resolvers = {
       return list().then((theList) => _.sample(theList))
     },
     list: () => {
-      return list().then((theList) => {
-        return theList.map((bias) => bias)
-      })
+      return list();
     },
   },
   Bias: {
