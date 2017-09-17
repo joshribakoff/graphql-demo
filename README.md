@@ -58,6 +58,7 @@ https://github.com/facebook/graphql/issues/237
 - Network resources are limited or unreliable
 - When you find yourself doing lots of client-side processing
 - When you find that your backend is becoming your own sort of bug ridden hard-coded version of graphQL.
+- https://en.wikipedia.org/wiki/Inner-platform_effect#Appropriate_uses
 
 # A picture is worth 1000 words
 
