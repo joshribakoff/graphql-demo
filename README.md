@@ -25,8 +25,7 @@ If & *only if* the user asked for the descriptions, the GraphQL resolver iterate
   
   // The "router" will never reach here, unless bias.description is part of the query.
   Bias: {
-    // bias.description will resolve to the promise returned by description()
-    // this causes an http fetch for the details page of the bias, to get the description
+    // bias.description resolver is being assigned to promise generating description() function
     description: description  
   }
 ```
