@@ -47,14 +47,5 @@ function description(url) {
     })
 }
 
-function hydrate(bias) {
-  return description(bias.url)
-    .then((description) => {
-      bias.description = description;
-      return bias;
-    })
-}
-
 module.exports.list = list
 module.exports.description = description
-module.exports.hydrate = hydrate

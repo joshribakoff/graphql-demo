@@ -1,10 +1,11 @@
-const {list, description, hydrate} = require('./api');
+const {list, description} = require('./api');
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 const _ = require('lodash');
+const { makeExecutableSchema  } = require('graphql-tools');
 
-const schema = buildSchema(`
+const typeDefs = `
   type Bias {
     title: String!
     description: String!
@@ -14,30 +15,38 @@ const schema = buildSchema(`
     list: [Bias]!
     random: Bias!
   }
-`);
+`;
 
-let root = {
-  random: function() {
-    return list()
-      .then((theList) => {
-        let bias = _.sample(theList);
-        return hydrate(bias)
-      })
+const resolvers = {
+  Query: {
+    random: function() {
+      return list()
+        .then((theList) => {
+          let bias = _.sample(theList);
+          return bias;
+        })
+    },
+    list: () => {
+      return list()
+        .then((theList) => {
+          return theList.map((bias) => {
+            return bias;
+          })
+        })
+    },
   },
-  list: () => {
-    return list()
-      .then((theList) => {
-        return Promise.all(theList.map((bias) => {
-          return hydrate(bias)
-        }))
-      })
+  Bias: {
+    description: (bias) => {
+      return description(bias.url)
+    }
   }
 }
+
+const schema = makeExecutableSchema({typeDefs, resolvers})
 
 var app = express();
 app.use('/graphql', graphqlHTTP({
   schema: schema,
-  rootValue: root,
   graphiql: true,
 }));
 app.listen(4000);
