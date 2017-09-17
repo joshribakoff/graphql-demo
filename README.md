@@ -46,7 +46,7 @@ https://github.com/facebook/graphql/issues/237
 # A picture is worth 1000 words
 
 ![](https://i.imgur.com/l8cAHSN.png)
-![](blob:https://imgur.com/8175d28f-b2ec-4d16-aceb-0848493bccc7)
+![](https://i.imgur.com/7I96Ixk.png)
 ![](https://i.imgur.com/BZG9Rkh.png)
 
 https://www.youtube.com/watch?v=Tpf9kVE2AY8
