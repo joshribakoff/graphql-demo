@@ -42,7 +42,7 @@ https://github.com/facebook/graphql/issues/237
 - Don't use it to convert a tree into a graph back into a tree.
 - Don't use it where N+1 queries to the backend will be an issue & SQL is easier.
 - Don't use it if you want a document, or blob of json. Not everything needs a strict type system. If you don't need to query into a blob of data, use REST to fetch that blob.
-- Netflix's Falcor is interested because it de-dupes data using a "symlinks" concept, instead of exploding data out, which might make cyclic self referencing graphs more tennable.
+- Netflix's Falcor is interesting because it de-dupes data using a "symlinks" concept, instead of exploding data out, which might make cyclic self referencing graphs more tennable.
 - If you're a small team with simple use cases you can do this "resolver" concept with local function calls & ad-hoc query flags, without graphQL. A tree of graphQL resolvers is just like a tree of local function calls.
 - https://en.wikipedia.org/wiki/Inner-platform_effect
 
