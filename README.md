@@ -43,6 +43,7 @@ https://github.com/facebook/graphql/issues/237
 - Don't use it where N+1 queries to the backend will be an issue & SQL is easier.
 - Don't use it if you want a document, or blob of json. Not everything needs a strict type system. If you don't need to query into a blob of data, use REST to fetch that blob.
 - Netflix's Falcor is interested because it de-dupes data using a "symlinks" concept, instead of exploding data out, which might make cyclic self referencing graphs more tennable.
+- If you're a small team with simple use cases you can do this "resolver" concept with local function calls & ad-hoc query flags, without graphQL. A tree of graphQL resolvers is just like a tree of local function calls.
 
 # When to use GraphQL
 
@@ -50,6 +51,8 @@ https://github.com/facebook/graphql/issues/237
 - Many client-apps to support
 - Rich views that are used in different contexts
 - Network resources are limited or unreliable
+- When you find yourself doing lots of client-side processing
+- When you find that your backend is becoming your own sort of bug ridden hard-coded version of graphQL.
 
 # A picture is worth 1000 words
 
