@@ -9,8 +9,11 @@
     "express-graphql": "^0.6.11",
     "fetch": "^1.1.0",
     "graphql": "^0.11.3",
+    "graphql-tools": "^1.2.2",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3"
   },
-  "scripts": {"start":"node index.js"}
+  "scripts": {
+    "start": "node index.js"
+  }
 }
