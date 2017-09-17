@@ -32,7 +32,7 @@ If & *only if* the user asked for the descriptions, the GraphQL resolver iterate
   }
 ```
 
-For a more intuitive explanation of the resolvers concept, check out the videos about netflix's falcor. GraphQL is objectively a more robust & powerful tool but Falcor is easier to understand, due to it's focus on the inner workings & less developer evangelism.
+For a more intuitive explanation of the resolvers concept, check out the videos about netflix's falcor. GraphQL is objectively a more robust & powerful tool but Falcor is easier to understand, partially because its more limited, but also due to it's focus on the inner workings & less developer evangelism.
 
 # When not to use GraphQL
 
@@ -42,6 +42,7 @@ https://github.com/facebook/graphql/issues/237
 - Don't use it to convert a tree into a graph back into a tree.
 - Don't use it where N+1 queries to the backend will be an issue & SQL is easier.
 - Don't use it if you want a document, or blob of json. Not everything needs a strict type system. If you don't need to query into a blob of data, use REST to fetch that blob.
+- Netflix's Falcor is interested because it de-dupes data using a "symlinks" concept, instead of exploding data out, which might make cyclic self referencing graphs more tennable.
 
 # When to use GraphQL
 
