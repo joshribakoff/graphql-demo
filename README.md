@@ -17,15 +17,14 @@ Next, consider that the description property is missing from the list of biases 
 If & *only if* the user asked for the descriptions, the GraphQL resolver iterates the resolvers again, ands end up on the `bias.description` resolver, which uses the `description()` function to resolve the description for the partial bias object into a complete (from the query's perspective) hydrated object.
 ```js
   Query: {
-    random: () => {
-      return list().then(_.sample)
-    },
     list: () => {
-      return list();
+      return list(); // returns something like [{title:'foo'},{title:'bar'}] or in other words 'description' is missing..
     },
   },
+  
+  // The "router" will never reach here, unless bias.description is part of the query.
   Bias: {
-    description: description
+    description: description  // bias.description will resolve to the promise returned by description(), causing an http fetch
   }
 ```
 
