@@ -42,3 +42,9 @@ https://github.com/facebook/graphql/issues/237
 - Many client-apps to support
 - Rich views that are used in different contexts
 - Network resources are limited or unreliable
+
+# Mental Model of GraphQL
+
+![](https://files.slack.com/files-pri/T024Y04KD-F747KDN83/1-alm6aootcuvare3ar3loxw.png)
+![](https://files.slack.com/files-pri/T024Y04KD-F73PY5F9P/image.png)
+![](https://files.slack.com/files-pri/T024Y04KD-F74DV1HGD/screen_shot_2017-09-16_at_10.21.06_pm.png)
