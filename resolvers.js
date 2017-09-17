@@ -1,4 +1,6 @@
 const {list, description} = require('./api');
+const _ = require('lodash');
+
 module.exports = {
   Query: {
     random: () => {
