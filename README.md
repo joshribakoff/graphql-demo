@@ -14,7 +14,7 @@ The resolver is not documented very well in the GraphQL reference implementation
 
 Next, consider that the description property is missing from the list of biases returned by `list()`, it only returned a list of partial biases. They are missing their descriptions.
 
-If & *only if* the user asked for the descriptions, the GraphQL resolver iterates the resolvers again, and ends up down on the `bias.description` resolver, which uses the `description()` function to resolve the description for the partial bias object into a complete (from the query's perspective) hydrated object.
+If & *only if* the user asked for the descriptions, the GraphQL resolver iterates the resolvers again, and ends up down on the `bias.description` resolver, which uses the `description()` function to resolve the description for the partial bias object into a bias object complete enough to fulfill the query. This ensures if the user does NOT select bias.description, there is no superfluous calls to the backend or extra junk in the response which wasn't needed.
 ```js
   Query: {
     list: () => {
