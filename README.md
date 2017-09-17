@@ -1,6 +1,8 @@
 # graphql-demo
 
-Run `npm start` & goto `localhost:4000`. Send a graphQL query for a list of cognitive biases, or a random cognitive bias. Choose which fields you need. The nodeJS `api.js` will scrape the cognitive biases website efficiently & with caching, to request the minimum amount to the backend to resolve the query.
+Run `npm install` & then `npm start` or `yarn install` & `yarn start` (preferred).
+
+Goto `localhost:4000`. Send a graphQL query for a list of cognitive biases, or a random cognitive bias. Choose which fields you need. The nodeJS `api.js` will scrape the cognitive biases website efficiently & with caching, to request the minimum amount to the backend to resolve the query.
 ![](https://i.imgur.com/eDvVAIZ.png)
 
 # Examples
