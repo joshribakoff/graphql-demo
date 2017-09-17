@@ -18,13 +18,16 @@ If & *only if* the user asked for the descriptions, the GraphQL resolver iterate
 ```js
   Query: {
     list: () => {
-      return list(); // returns something like [{title:'foo'},{title:'bar'}] or in other words 'description' is missing..
+      // return something like [{title:'foo'},{title:'bar'}] or in other words 'description' is missing..
+      return list();
     },
   },
   
   // The "router" will never reach here, unless bias.description is part of the query.
   Bias: {
-    description: description  // bias.description will resolve to the promise returned by description(), causing an http fetch
+    // bias.description will resolve to the promise returned by description()
+    // this causes an http fetch for the details page of the bias, to get the description
+    description: description  
   }
 ```
 
