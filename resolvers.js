@@ -4,13 +4,13 @@ const _ = require('lodash');
 module.exports = {
   Query: {
     random: () => {
-      return list().then((theList) => _.sample(theList))
+      return list().then(_.sample)
     },
     list: () => {
       return list();
     },
   },
   Bias: {
-    description: (bias) => description(bias.url)
+    description: description
   }
 }

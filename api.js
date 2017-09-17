@@ -32,7 +32,8 @@ function list() {
 }
 
 let descriptionByUrlCache = {}
-function description(url) {
+function description(bias) {
+  const url = bias.url;
   if(undefined !== descriptionByUrlCache[url]) {
     console.log(`cache hit for ${url}`)
     return Promise.resolve(descriptionByUrlCache[url]);
