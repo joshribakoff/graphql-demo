@@ -35,8 +35,8 @@ If & *only if* the user asked for the descriptions, the GraphQL resolver iterate
 For a more intuitive explanation of the resolvers concept, check out the videos about netflix's falcor. GraphQL is objectively a more robust & powerful tool but Falcor is easier to understand, partially because its more limited, but also due to it's focus on the inner workings & less developer evangelism.
 
 Also see:
-http://dev.apollodata.com/tools/graphql-tools/resolvers.html
-https://www.compose.com/articles/use-all-the-databases-part-2/
+- http://dev.apollodata.com/tools/graphql-tools/resolvers.html
+- https://www.compose.com/articles/use-all-the-databases-part-2/
 
 # When not to use GraphQL
 
