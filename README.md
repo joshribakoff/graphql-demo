@@ -10,11 +10,11 @@ Goto `localhost:4000`. Send a graphQL query for a list of cognitive biases, or a
 ![](https://i.imgur.com/ixBBnyo.png)
 
 # Resolver
-The resolver is not documented very well in the GraphQL reference implementations (the apollo server documentation is better http://dev.apollodata.com/tools/graphql-tools/resolvers.html). The way resolvers can be nested is by flattening them like a router. First the query hits the `Query` property, and looks for the field you're requesting (random, or list).
+The resolver is not documented very well in the GraphQL reference implementations (the apollo server documentation is better http://dev.apollodata.com/tools/graphql-tools/resolvers.html). The way resolvers can be nested is by flattening them like a router. First the query hits the `Query` property, and looks for the field matching your request.
 
-Next, consider that the description property is missing from the list of biases returned by `list()`, it only returned a list of partial biases, that is they're missing their descriptions.
+Next, consider that the description property is missing from the list of biases returned by `list()`, it only returned a list of partial biases. They are missing their descriptions.
 
-If & *only if* the user asked for the descriptions, the GraphQL resolver iterates the resolvers again, ands end up on the `bias.description` resolver, which uses the `description()` function to resolve the description for the partial bias object into a complete (from the query's perspective) hydrated object.
+If & *only if* the user asked for the descriptions, the GraphQL resolver iterates the resolvers again, and ends up down on the `bias.description` resolver, which uses the `description()` function to resolve the description for the partial bias object into a complete (from the query's perspective) hydrated object.
 ```js
   Query: {
     list: () => {
