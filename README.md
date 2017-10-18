@@ -2,7 +2,7 @@
 
 Run `npm install` & then `npm start` or `yarn install` & `yarn start` (preferred).
 
-Goto `localhost:4000`. Send a graphQL query for a list of cognitive biases, or a random cognitive bias. Choose which fields you need. The script will scrape the cognitive biases website efficiently & with caching, to request the minimum amount to the backend to resolve the graphQL query. For example, if title is not requested, the response is fulfilled only by requesting `/list`, since that page has the titles & is enough to fulfill the query.
+Goto `localhost:4000`. Send a graphQL query for a list of cognitive biases, or a random cognitive bias. Choose which fields you need. The script will scrape the cognitive biases website efficiently & with caching, to request the minimum amount to the backend to resolve the graphQL query. For example, if only title (and not description) is requested, the response is fulfilled only by requesting `/list`, since that page has the titles & is enough to fulfill the query.
 ![](https://i.imgur.com/eDvVAIZ.png)
 
 # Examples
